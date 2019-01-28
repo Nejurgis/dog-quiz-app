@@ -5,6 +5,7 @@ import DogNameContainer from './containers/DogNameContainer'
 import ImageComponent from './components/ImageComponent'
 import {Provider} from 'react-redux'
 import store from './store'
+import GetBreeds from './components/GetBreeds'
 
 class App extends Component {
   render() {
@@ -18,7 +19,7 @@ class App extends Component {
           <div className="name-container">
           <DogNameContainer></DogNameContainer>
           </div>
-          
+           <GetBreeds></GetBreeds>
         </main>
       </div>
       </Provider>
