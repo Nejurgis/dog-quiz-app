@@ -1,9 +1,8 @@
 import * as React from 'react'
-import './DogNameComponent.css';
+import './DogNameComponent.css' ;
 
 export default function DogNameComponent() {
-
-    return (
-        <button>Bremen Dog</button>
-    )
+        return (
+            <button>Bremen Dog</button>
+        )
 }
