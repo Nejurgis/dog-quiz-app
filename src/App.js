@@ -9,10 +9,11 @@ class App extends Component {
     return (
       <div className="App">
         <main className="App-header">
-          <ImageComponent></ImageComponent>
           <h1>Who's this Pokémon?</h1>
+          <ImageComponent></ImageComponent>
+          
           <div className="name-container">
-            <DogNameContainer></DogNameContainer>
+          <DogNameContainer></DogNameContainer>
           </div>
           
         </main>
