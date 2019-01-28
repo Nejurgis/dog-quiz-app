@@ -9,8 +9,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+        <h1>Who's this Pokémon?</h1>
           <ImageComponent></ImageComponent>
-          <h1>Who's this Pokémon?</h1>
           <div className="name-container">
             <DogNameComponent></DogNameComponent>
             <DogNameComponent></DogNameComponent>
