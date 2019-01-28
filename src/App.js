@@ -7,7 +7,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-  
+          <h1>Dog App</h1>
+          <button>First Breed</button>
+          <button>Second Breed</button>
+          <button>Third Breed</button>
         </header>
       </div>
     );
