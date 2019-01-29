@@ -8,6 +8,22 @@ import store from './store'
 import GetBreeds from './components/GetBreeds'
 import RandomButtonContainer from './containers/RandomButtonContainer'
 
+const data = {
+  "affenpinscher": [],
+        "african": [],
+        "airedale": [],
+        "akita": [],
+        "appenzeller": [],
+        "basenji": [],
+        "beagle": [],
+        "bluetick": [],
+        "borzoi": [],
+        "bouvier": [],
+        "boxer": [],
+        "brabancon": [],
+        "briard": [],
+}
+
 class App extends Component {
   render() {
     return (
