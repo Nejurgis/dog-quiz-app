@@ -14,22 +14,28 @@ class DogNameContainer extends React.Component {
         let n = String(url)
         const correctName = n.split('/')[4]
 
-        const randomDogNumber1 = Math.floor(Math.random() * Object.keys(this.props.value).length)
-        const randomDogNumber2 = Math.floor(Math.random() * Object.keys(this.props.value).length)
+        const randomDog = () => {
+            let randomNum = Math.floor(Math.random() * Object.keys(this.props.value).length)
+            return Object.keys(this.props.value)[randomNum]
+        } 
 
 
-        const randomDog1 = Object.keys(this.props.value)[randomDogNumber1]
-        const randomDog2 = Object.keys(this.props.value)[randomDogNumber2]
+        console.log(randomDog())
 
-        // console.log(this.props.value)
-        // 1 change the url 
+
+        const lucky = [randomDog(), randomDog(), correctName]
+        const tryOut = () => lucky[Math.floor(Math.random() * lucky.length)]
+        
+        let compo = <DogNameComponent></DogNameComponent>
+
         
 
         return (
             <div>
-                <DogNameComponent submitAnswer={this.submitAnswer} name={correctName}></DogNameComponent>
-                <DogNameComponent submitAnswer={this.submitAnswer} name={randomDog1}></DogNameComponent>
-                <DogNameComponent submitAnswer={this.submitAnswer} name={randomDog2}></DogNameComponent>
+                <DogNameComponent submitAnswer={this.submitAnswer} name={tryOut()}></DogNameComponent>
+                {/* {compo} */}
+                <DogNameComponent submitAnswer={this.submitAnswer} name={randomDog()}></DogNameComponent>
+                <DogNameComponent submitAnswer={this.submitAnswer} name={tryOut()}></DogNameComponent>
             </div>
         )
     }
