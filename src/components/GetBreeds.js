@@ -1,31 +1,27 @@
 import * as React from 'react'
 import * as request from 'superagent'
 import { connect } from 'react-redux'
-import { setBreeds } from '../actions/action'
+import { setImage } from '../actions/setImage'
 
 class GetBreeds extends React.Component {
 
   componentDidMount() {
     request('https://dog.ceo/api/breeds/image/random')
-      .then(response => setBreeds(this.props.setBreeds(response.body.message)))
-    // .then(response => (console.log(response.body.message)))
+      .then(response => this.props.setImage(response.body.message))
   }
 
   render() {
-    const image = this.props.breeds
-    const url = image.map(item => item.breeds
-    )
+    console.log(this.props.image)
+    const image = this.props.some
 
-    return (<div>
-      {/* <img className='pic' src={url}></img> */}
-    </div>)
+    return (<div></div>)
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    breeds: state.breeds
+    image: state.breeds
   }
 }
 
-export default connect(mapStateToProps, { setBreeds })(GetBreeds)
+export default connect(mapStateToProps, { setImage })(GetBreeds)
