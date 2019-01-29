@@ -1,6 +1,6 @@
-export function setBreeds(breeds) {
+export function setImage(breeds) {
     return {
-        type: 'SET_BREEDS',
+        type: 'SET_IMAGE',
         payload: {
             breeds: breeds
         }
