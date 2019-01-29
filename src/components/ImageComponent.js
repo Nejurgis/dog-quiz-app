@@ -7,7 +7,7 @@ function ImageComponent(props) {
     const url = image.map(item => item.breeds
     )
         return (
-            <img className='pic' src={url}></img>
+            <img className='pic' src={url} alt='cute dog'></img>
         )
 }
 
