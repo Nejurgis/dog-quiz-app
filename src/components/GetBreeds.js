@@ -12,20 +12,17 @@ class GetBreeds extends React.Component {
   }
 
   render() {    
-    //console.log('this.props',this.props.breeds[0])
-    // console.log(Object.keys(this.props.breeds[0]))
-    // let image = this.props.breeds[
+    const image = this.props.breeds
+    const url = image.map(item => item.breeds
+    )
 
-    
-    
     return (<div>
-          <img className='pic' src=""></img>
+          {/* <img className='pic' src={url}></img> */}
     </div>)
   }
 }
 
 const mapStateToProps = (state) => {
-  //console.log('state',state.breeds[0])
  return  {
       breeds : state.breeds
  }
