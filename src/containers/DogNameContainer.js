@@ -6,7 +6,7 @@ import { instanceOf } from 'prop-types';
 
 class DogNameContainer extends React.Component {
 
-    
+
 
 
     render() {
@@ -17,25 +17,15 @@ class DogNameContainer extends React.Component {
         const randomDog = () => {
             let randomNum = Math.floor(Math.random() * Object.keys(this.props.value).length)
             return Object.keys(this.props.value)[randomNum]
-        } 
+        }
 
-
-        console.log(randomDog())
-
-
-        const lucky = [randomDog(), randomDog(), correctName]
-        const tryOut = () => lucky[Math.floor(Math.random() * lucky.length)]
-        
-        let compo = <DogNameComponent></DogNameComponent>
-
-        
+        const dogArray = [randomDog(), randomDog(), correctName].sort()
 
         return (
             <div>
-                <DogNameComponent submitAnswer={this.submitAnswer} name={tryOut()}></DogNameComponent>
-                {/* {compo} */}
-                <DogNameComponent submitAnswer={this.submitAnswer} name={randomDog()}></DogNameComponent>
-                <DogNameComponent submitAnswer={this.submitAnswer} name={tryOut()}></DogNameComponent>
+                <DogNameComponent submitAnswer={this.submitAnswer} name={dogArray[0]}></DogNameComponent>
+                <DogNameComponent submitAnswer={this.submitAnswer} name={dogArray[1]}></DogNameComponent>
+                <DogNameComponent submitAnswer={this.submitAnswer} name={dogArray[2]}></DogNameComponent>
             </div>
         )
     }
