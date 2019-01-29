@@ -8,6 +8,22 @@ import store from './store'
 import GetBreeds from './components/GetBreeds'
 import RandomButtonContainer from './containers/RandomButtonContainer'
 
+const data = {
+  "affenpinscher": ['2'],
+        "african": [],
+        "airedale": [],
+        "akita": [],
+        "appenzeller": [],
+        "basenji": [],
+        "beagle": [],
+        "bluetick": [],
+        "borzoi": [],
+        "bouvier": [],
+        "boxer": [],
+        "brabancon": [],
+        "briard": [],
+}
+
 class App extends Component {
   render() {
     return (
@@ -16,10 +32,10 @@ class App extends Component {
         <main className="App-header">
           <h1>Who's this Pokémon?</h1>
           <ImageComponent></ImageComponent>
-          <RandomButtonContainer />
+          <RandomButtonContainer/>
           
           <div className="name-container">
-          <DogNameContainer></DogNameContainer>
+          <DogNameContainer value ={data}></DogNameContainer>
           </div>
            <GetBreeds></GetBreeds>
         </main>

@@ -6,9 +6,9 @@ export default class DogNameContainer extends React.Component {
     render() {
         return (
             <div>
-                <DogNameComponent submitAnswer={this.submitAnswer}></DogNameComponent>
-                <DogNameComponent submitAnswer={this.submitAnswer}></DogNameComponent>
-                <DogNameComponent submitAnswer={this.submitAnswer}></DogNameComponent>
+                <DogNameComponent submitAnswer={this.submitAnswer} name={this.props}></DogNameComponent>
+                <DogNameComponent submitAnswer={this.submitAnswer}name={this.props}></DogNameComponent>
+                <DogNameComponent submitAnswer={this.submitAnswer}name={this.props}></DogNameComponent>
             </div>
         )
     }
