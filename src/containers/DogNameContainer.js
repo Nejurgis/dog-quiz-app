@@ -23,9 +23,7 @@ class DogNameContainer extends React.Component {
 
         return (
             <div>
-                <DogNameComponent submitAnswer={this.submitAnswer} name={dogArray[0]}></DogNameComponent>
-                <DogNameComponent submitAnswer={this.submitAnswer} name={dogArray[1]}></DogNameComponent>
-                <DogNameComponent submitAnswer={this.submitAnswer} name={dogArray[2]}></DogNameComponent>
+                {dogArray.map((dog, index) => <DogNameComponent key={index} submitAnswer={this.submitAnswer} name={dog} />)}
             </div>
         )
     }
