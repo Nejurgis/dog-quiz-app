@@ -6,7 +6,7 @@ import ImageComponent from './components/ImageComponent'
 import {Provider} from 'react-redux'
 import store from './store'
 import GetBreeds from './components/GetBreeds'
-import RandomButtonContainer from './components/RandomButtonContainer'
+import RandomButtonContainer from './containers/RandomButtonContainer'
 
 class App extends Component {
   render() {
