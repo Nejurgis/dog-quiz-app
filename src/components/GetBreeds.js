@@ -4,28 +4,28 @@ import { connect } from 'react-redux'
 import {setBreeds} from '../actions/action'
 
 class GetBreeds extends React.Component {
-  state = {}
 
   componentDidMount() {
-    request('https://dog.ceo/api/breeds/list/all')
+    request('https://dog.ceo/api/breeds/image/random')
       .then(response => setBreeds(this.props.setBreeds(response.body.message)))
-      
-
-      //.then(response => (console.log(response.body.message)))
-      
+        // .then(response => (console.log(response.body.message)))
   }
 
-  render() {
+  render() {    
+    //console.log('this.props',this.props.breeds[0])
+    // console.log(Object.keys(this.props.breeds[0]))
+    // let image = this.props.breeds[
+
     
-    console.log('this.props',this.props.breeds)
-    return <div>
-        <p> {this.props.state}</p>
-    </div>
+    
+    return (<div>
+          <img className='pic' src=""></img>
+    </div>)
   }
 }
 
 const mapStateToProps = (state) => {
-  //console.log('state',state)
+  //console.log('state',state.breeds[0])
  return  {
       breeds : state.breeds
  }
