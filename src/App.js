@@ -9,7 +9,7 @@ import GetBreeds from './components/GetBreeds'
 import RandomButtonContainer from './containers/RandomButtonContainer'
 
 const data = {
-  "affenpinscher": [],
+  "affenpinscher": ['2'],
         "african": [],
         "airedale": [],
         "akita": [],
@@ -32,10 +32,10 @@ class App extends Component {
         <main className="App-header">
           <h1>Who's this Pokémon?</h1>
           <ImageComponent></ImageComponent>
-          <RandomButtonContainer />
+          <RandomButtonContainer/>
           
           <div className="name-container">
-          <DogNameContainer></DogNameContainer>
+          <DogNameContainer value ={data}></DogNameContainer>
           </div>
            <GetBreeds></GetBreeds>
         </main>
