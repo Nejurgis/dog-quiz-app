@@ -35,5 +35,11 @@
   margin-top: 5vh
 }
 
-/* .name-container button{
+
+/* .name-container{
+
 } */
+.name-container button{
+  margin: 3vw
+  
+}
