@@ -1,5 +1,4 @@
 import * as React from 'react'
-import store from '../store'
 import { connect } from 'react-redux';
 
 class Stats extends React.Component {    

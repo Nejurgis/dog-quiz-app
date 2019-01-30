@@ -16,15 +16,26 @@ class DogNameContainer extends React.Component {
             let randomNum = Math.floor(Math.random() * Object.keys(this.props.value).length)
             return Object.keys(this.props.value)[randomNum]
         }
+
+        const renderButtons = () => {
+            return (
+                <div>
+                    {dogArray.map((dog, index) => 
+                    <DogNameComponent key={index} submitAnswer={() => this.submitAnswer(correctName, dog)} name={dog} />)}
+                </div>
+            )
+        }
         
         const dogArray = [randomDog(), randomDog(), correctName].sort()
-
+        
+        if (this.props.correctAnswersNum >= 10 ) {
+            alert('you guessed correctly 10 times!')
+            dogArray.push(randomDog(),randomDog(),randomDog())
+            
+        }
+    
         return (
-            <div>
-                <h1>haaaai {this.props.correctAnswersNum}</h1>
-                {dogArray.map((dog, index) => 
-                <DogNameComponent key={index} submitAnswer={() => this.submitAnswer(correctName, dog)} name={dog} />)}
-            </div>
+            renderButtons()
         )
     }
      
@@ -34,11 +45,11 @@ class DogNameContainer extends React.Component {
             .then(response => this.props.setImage(response.body.message))
         }
         if (correctName === dog){
-            alert("Correct!")
+            // alert("Correct!")
             this.props.addCorrect(dog)
             setTimeout(reRenderComponent, 2000)
         } else {  
-            alert("Wrong")
+            // alert("Wrong")
             this.props.addIncorrect(dog)
             setTimeout(reRenderComponent, 2000)
         }
@@ -53,5 +64,6 @@ const mapStateToProps = (state) => {
 
     }
 }
+
 
 export default connect(mapStateToProps,{addCorrect,addIncorrect, setImage})(DogNameContainer)

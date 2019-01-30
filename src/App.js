@@ -9,7 +9,7 @@ import GetBreeds from './components/GetBreeds'
 import Stats from './components/Stats'
 
 const data = {
-  "affenpinscher": ['2'],
+  "affenpinscher": [],
   "african": [],
   "airedale": [],
   "akita": [],
