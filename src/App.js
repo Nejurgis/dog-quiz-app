@@ -10,7 +10,7 @@ import Stats from './components/Stats'
 import GetHint from './containers/GetHint'
 
 const data = {
-  "affenpinscher": ['2'],
+  "affenpinscher": [],
   "african": [],
   "airedale": [],
   "akita": [],
