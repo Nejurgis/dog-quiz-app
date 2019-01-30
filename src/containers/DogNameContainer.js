@@ -28,8 +28,8 @@ class DogNameContainer extends React.Component {
         )
     }
 
-    submitAnswer() {
-        console.log('I am clickable')
+    submitAnswer(correctName) {
+        console.log(correctName)
     }
 }
 
