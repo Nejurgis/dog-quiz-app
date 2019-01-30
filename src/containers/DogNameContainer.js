@@ -1,14 +1,12 @@
 import * as React from 'react'
 import DogNameComponent from '../components/DogNameComponent'
 import { connect } from 'react-redux'
+import {addIncorrect} from '../actions/addIncorrect'
+import {addCorrect} from '../actions/addCorrect'
 // import { instanceOf } from 'prop-types';
 
 
 class DogNameContainer extends React.Component {
-
-
-
-
     render() {
         const url = this.props.imageUrl.map(item => item.breeds)
         let n = String(url)
@@ -32,19 +30,18 @@ class DogNameContainer extends React.Component {
 
     submitAnswer(correctName, dog) {
         if (correctName === dog){
+            this.props.addCorrect(dog)
             alert("Correct!")
         }else {
             alert("Wrong")
+            this.props.addIncorrect(dog)
         }
     }
 }
-
 const mapStateToProps = (state) => {
     return {
         imageUrl: state.breeds
     }
 }
 
-
-
-export default connect(mapStateToProps)(DogNameContainer)
+export default connect(mapStateToProps,{addCorrect,addIncorrect})(DogNameContainer)
