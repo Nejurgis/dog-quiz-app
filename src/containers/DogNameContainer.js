@@ -8,6 +8,7 @@ import {setImage} from '../actions/setImage'
 
 class DogNameContainer extends React.Component {
     render() {
+
         const url = this.props.imageUrl.map(item => item.breeds)
         const correctName = String(url).split('/')[4]
         
@@ -20,6 +21,7 @@ class DogNameContainer extends React.Component {
 
         return (
             <div>
+                <h1>haaaai {this.props.correctAnswersNum}</h1>
                 {dogArray.map((dog, index) => 
                 <DogNameComponent key={index} submitAnswer={() => this.submitAnswer(correctName, dog)} name={dog} />)}
             </div>
@@ -44,8 +46,11 @@ class DogNameContainer extends React.Component {
 
 }
 const mapStateToProps = (state) => {
+
     return {
-        imageUrl: state.breeds
+        imageUrl: state.breeds,
+        correctAnswersNum: state.answerReducer.correct.length
+
     }
 }
 
