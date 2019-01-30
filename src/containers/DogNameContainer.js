@@ -23,13 +23,15 @@ class DogNameContainer extends React.Component {
 
         return (
             <div>
-                {dogArray.map((dog, index) => <DogNameComponent key={index} submitAnswer={this.submitAnswer} name={dog} />)}
+                {dogArray.map((dog, index) => 
+                <DogNameComponent corret={'correct'} key={index} submitAnswer={() => this.submitAnswer(correctName)} name={dog} />)}
             </div>
         )
     }
 
-    submitAnswer() {
-        console.log('I am clickable')
+    submitAnswer(event) {
+        console.log(event.target)
+        console.log('event:',event)
     }
 }
 
