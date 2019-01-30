@@ -29,6 +29,9 @@ class DogNameContainer extends React.Component {
         )
     }
 
+    submitAnswer(correctName) {
+    
+
     submitAnswer(correctName, dog) {
         if (correctName === dog){
             alert("Correct!")
