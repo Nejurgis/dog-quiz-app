@@ -34,13 +34,14 @@ class DogNameContainer extends React.Component {
         if (correctName === dog){
             alert("Correct!")
             this.props.addCorrect(dog)
-            reRenderComponent()
-        }else {  
+            setTimeout(reRenderComponent, 2000)
+        } else {  
             alert("Wrong")
             this.props.addIncorrect(dog)
-            reRenderComponent()
+            setTimeout(reRenderComponent, 2000)
         }
     }
+
 }
 const mapStateToProps = (state) => {
     return {
