@@ -6,7 +6,6 @@ import ImageComponent from './components/ImageComponent'
 import { Provider } from 'react-redux'
 import store from './store'
 import GetBreeds from './components/GetBreeds'
-import RandomButtonContainer from './containers/RandomButtonContainer'
 
 const data = {
   "affenpinscher": ['2'],
@@ -201,8 +200,6 @@ class App extends Component {
           <main className="App-header">
             <h1>Who's this Pokémon?</h1>
             <ImageComponent></ImageComponent>
-            <RandomButtonContainer />
-
             <div className="name-container">
               <DogNameContainer value={data}></DogNameContainer>
             </div>
