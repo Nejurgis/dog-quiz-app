@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import GetBreeds from './components/GetBreeds'
 import Stats from './components/Stats'
+import GetHint from './containers/GetHint'
 
 const data = {
   "affenpinscher": ['2'],
@@ -207,6 +208,7 @@ class App extends Component {
               <DogNameContainer value={data}></DogNameContainer>
             </div>
             <GetBreeds></GetBreeds>
+            <GetHint></GetHint>
           </main>
         </div>
       </Provider>
