@@ -2,7 +2,7 @@ const reducer = (state = [], action = {}) => {
     switch (action.type) {
     case 'SET_IMAGE':
       return [
-        ...state,
+        state,
         action.payload
       ]
   
