@@ -11,7 +11,9 @@ function ImageComponent(props) {
     )
 }
 
+
 const mapStateToProps = (state) => {
+    
     return {
         breeds: state.breeds
     }

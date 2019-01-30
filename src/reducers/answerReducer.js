@@ -1,15 +1,24 @@
-const answerReducer = (state = [], action = {}) => {
+const initialState = {
+        correct: [],
+        inCorrect: []
+    }
+
+
+const answerReducer = (state = initialState, action = {}) => {
+
     switch (action.type) {
         case 'ADD_CORRECT_ANSWER':
-            return [
-                ...state,
-                action.payload
-            ]
+            return {
+                ...state, 
+                correct: [...state.correct, action.payload]
+            }
+                
+
         case 'ADD_INCORRECT_ANSWER':
-            return [
+            return {
                 ...state,
-                action.payload
-            ]
+                inCorrect: [...state.inCorrect, action.payload]
+            }
         default:
             return state
     }
