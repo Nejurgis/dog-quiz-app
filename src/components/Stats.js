@@ -8,6 +8,7 @@ class Stats extends React.Component {
         const total = this.props.correct+this.props.inCorrect
         return(
             <div>
+                <h3>Score: {Math.round((this.props.correct * 100) / total)} %</h3>
                 <h3>Correct Answers: {this.props.correct} / {total} </h3>
                 <h3>Incorrect Answers: {this.props.inCorrect} </h3>
             </div>
