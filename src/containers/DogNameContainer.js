@@ -1,7 +1,7 @@
 import * as React from 'react'
 import DogNameComponent from '../components/DogNameComponent'
 import { connect } from 'react-redux'
-import { instanceOf } from 'prop-types';
+// import { instanceOf } from 'prop-types';
 
 
 class DogNameContainer extends React.Component {
