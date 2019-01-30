@@ -3,6 +3,8 @@ import DogNameComponent from '../components/DogNameComponent'
 import { connect } from 'react-redux'
 import {addIncorrect} from '../actions/addIncorrect'
 import {addCorrect} from '../actions/addCorrect'
+import request from 'superagent'
+import {setImage} from '../actions/setImage'
 // import { instanceOf } from 'prop-types';
 
 
@@ -31,6 +33,17 @@ class DogNameContainer extends React.Component {
     submitAnswer(correctName, dog) {
         if (correctName === dog){
             this.props.addCorrect(dog)
+            const reRenderComppnent = () => {
+                request('https://dog.ceo/api/breeds/image/random')
+                .then(response => this.props.setImage(response.body.message))
+
+            }
+            reRenderComppnent()
+            // call action that will rerender the component
+            // the action will:
+            // 1. get new image//
+            // 2. get new buttons//
+
             alert("Correct!")
         }else {
             alert("Wrong")
@@ -44,4 +57,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps,{addCorrect,addIncorrect})(DogNameContainer)
+export default connect(mapStateToProps,{addCorrect,addIncorrect, setImage})(DogNameContainer)
