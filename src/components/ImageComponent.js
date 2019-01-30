@@ -3,7 +3,6 @@ import './ImageComponent.css';
 import { connect } from 'react-redux'
 // props are from connect
 function ImageComponent(props) {
-    console.log(props)
     const image = props.breeds
     // const url = image.map(item => item.breeds)
 
@@ -17,7 +16,9 @@ function ImageComponent(props) {
     )
 }
 
+
 const mapStateToProps = (state) => {
+    
     return {
         breeds: state.breeds
     }
