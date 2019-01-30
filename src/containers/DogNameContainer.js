@@ -28,9 +28,7 @@ class DogNameContainer extends React.Component {
             </div>
         )
     }
-
-    submitAnswer(correctName) {
-    
+     
 
     submitAnswer(correctName, dog) {
         if (correctName === dog){
