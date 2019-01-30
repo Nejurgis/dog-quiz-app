@@ -24,14 +24,12 @@ class DogNameContainer extends React.Component {
         return (
             <div>
                 {dogArray.map((dog, index) => 
-                <DogNameComponent corret={'correct'} key={index} submitAnswer={() => this.submitAnswer(correctName, dog)} name={dog} />)}
+                <DogNameComponent key={index} submitAnswer={() => this.submitAnswer(correctName, dog)} name={dog} />)}
             </div>
         )
     }
 
     submitAnswer(correctName, dog) {
-        
-        console.log(correctName, dog)
         if (correctName === dog){
             alert("Correct!")
         }else {
