@@ -1,7 +1,6 @@
 import React from 'react'
 import DogNameContainer from './DogNameContainer'
 import ImageComponent from '../components/ImageComponent'
-import store from '../store'
 import GetBreeds from '../components/GetBreeds'
 import Stats from '../components/Stats'
 import GetHint from './GetHint'
