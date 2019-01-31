@@ -2,13 +2,8 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+.App-main {
+  background-image: linear-gradient(#314755, #26a0da);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,28 +13,11 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+h1 {
+  padding: 0.5em;
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.randomButton {
-  margin-top: 5vh
-}
-
-
-/* .name-container{
-
-} */
-.name-container button{
-  margin: 3vw
-  
 }

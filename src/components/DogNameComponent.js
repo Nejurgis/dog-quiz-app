@@ -1,11 +1,13 @@
-import * as React from 'react'
+import * as React from 'react';
 import './DogNameComponent.css' ;
+import Button from '@material-ui/core/Button';
 
 export default function DogNameComponent(props) {
     
     const { submitAnswer } = props
         
     return (
-            <button onClick={submitAnswer}>{props.name}</button>
+        <Button onClick={submitAnswer} variant="contained" color="primary" > {props.name}</Button>
+         
         )
 }
