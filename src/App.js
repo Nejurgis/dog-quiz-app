@@ -8,6 +8,7 @@ import store from './store'
 import GetBreeds from './components/GetBreeds'
 import Stats from './components/Stats'
 import GetHint from './containers/GetHint'
+import { Transition, animated, config } from 'react-spring'
 
 const data = {
   "affenpinscher": [],
@@ -195,13 +196,18 @@ const data = {
 }
 
 class App extends Component {
-  
+  state = { items:[]}
+
+ 
   render() {
     return (
       <Provider store={store}>
         <div className="App">
           <main className="App-main">
-            <Stats />
+
+            <Stats></Stats>
+
+
             <h1>Who's this Pokémon?</h1>
             <ImageComponent />
             <div className="buttons-container">
@@ -210,8 +216,11 @@ class App extends Component {
             <GetBreeds />
             <GetHint />
           </main>
+         
+
         </div>
       </Provider>
+      
     );
   }
 }

@@ -4,19 +4,34 @@ import { connect } from 'react-redux'
 import { addIncorrect } from '../actions/addIncorrect'
 import { addCorrect } from '../actions/addCorrect'
 import request from 'superagent'
-import { setImage } from '../actions/setImage'
+import {setImage} from '../actions/setImage'
+import Correct from '../components/Correct'
+import Incorrect from '../components/Incorrect'
 
 class DogNameContainer extends React.Component {
+    
+    state = {
+        showCorrect: false,
+        showIncorrect: false,
+    }
+
+
+    hidingFunc = (value) => {
+        if (value === 'yes') {
+            this.setState({showCorrect: !this.state.showCorrect})
+        } else {
+            this.setState({showIncorrect: !this.state.showIncorrect})
+        }
+    }
+
     render() {
 
         const url = this.props.imageUrl.map(item => item.breeds)
         const correctName = String(url).split('/')[4]
-
         const randomDog = () => {
             let randomNum = Math.floor(Math.random() * Object.keys(this.props.value).length)
             return Object.keys(this.props.value)[randomNum]
         }
-
         const renderButtons = () => {
             return (
                 <div>
@@ -35,7 +50,13 @@ class DogNameContainer extends React.Component {
         }
 
         return (
-            renderButtons()
+            <div>
+
+                {this.state.showIncorrect && <Incorrect />}
+                {this.state.showCorrect && <Correct />}
+                 {renderButtons()}
+            
+            </div>
         )
     }
 
@@ -44,12 +65,14 @@ class DogNameContainer extends React.Component {
             request('https://dog.ceo/api/breeds/image/random')
                 .then(response => this.props.setImage(response.body.message))
         }
-
-        if (correctName === dog) {
+       
+        if (correctName === dog){
+            this.hidingFunc('yes')
             this.props.addCorrect(dog)
             setTimeout(reRenderComponent, 2000)
-        } else {
-            alert("Wrong")
+        } else {  
+            this.hidingFunc('no')
+
             this.props.addIncorrect(dog)
             setTimeout(reRenderComponent, 2000)
         }
