@@ -201,14 +201,14 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <main className="App-main">
-            <Stats></Stats>
+            <Stats />
             <h1>Who's this Pokémon?</h1>
-            <ImageComponent></ImageComponent>
+            <ImageComponent />
             <div className="buttons-container">
               <DogNameContainer value={data}></DogNameContainer>
             </div>
-            <GetBreeds></GetBreeds>
-            <GetHint></GetHint>
+            <GetBreeds />
+            <GetHint />
           </main>
         </div>
       </Provider>
