@@ -3,6 +3,7 @@ import './styles/App.css'
 import { Provider } from 'react-redux'
 import store from './store'
 import ImageApp from './containers/ImageApp'
+import ButtonApp from './containers/ButtonApp'
 
 
 const data = {
