@@ -206,13 +206,15 @@ class App extends Component {
           <main className="App-main">
 
             <Stats></Stats>
+
+
             <h1>Who's this Pokémon?</h1>
-            <ImageComponent></ImageComponent>
+            <ImageComponent />
             <div className="buttons-container">
               <DogNameContainer value={data}></DogNameContainer>
             </div>
-            <GetBreeds></GetBreeds>
-            <GetHint></GetHint>
+            <GetBreeds />
+            <GetHint />
           </main>
          
 
