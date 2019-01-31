@@ -5,28 +5,31 @@ import {addIncorrect} from '../actions/addIncorrect'
 import {addCorrect} from '../actions/addCorrect'
 import request from 'superagent'
 import {setImage} from '../actions/setImage'
-import App from '../App';
+import Correct from '../components/Correct'
+import Incorrect from '../components/Incorrect'
+
 
 class DogNameContainer extends React.Component {
+    
+    state = {
+        showCorrect: false,
+        showIncorrect: false,
+    }
+
+    hidingFunc = (value) => {
+        if (value === 'yes') {
+            this.setState({showCorrect: !this.state.showCorrect})
+        } else {
+            this.setState({showIncorrect: !this.state.showIncorrect})
+        }
+        
+        
+    }
+
     render() {
 
         const url = this.props.imageUrl.map(item => item.breeds)
         const correctName = String(url).split('/')[4]
-        const clicky = (event) => {
-            this.setState({selectedItem: event.currentTarget.dataset.id})
-            console.log('works?')
-        }
-
-        function findReactElement(node) {
-            for (var key in node) {
-                if (key.startsWith("__reactInternalInstance$")) {
-                    return node[key]._debugOwner.stateNode;
-                }
-            }
-            return null;
-        }
-        // console.log(findReactElement(DogNameComponent))
-
         const randomDog = () => {
             let randomNum = Math.floor(Math.random() * Object.keys(this.props.value).length)
             return Object.keys(this.props.value)[randomNum]
@@ -49,7 +52,14 @@ class DogNameContainer extends React.Component {
         }
     
         return (
-            renderButtons()
+            <div>
+
+                {this.state.showIncorrect && <Incorrect />}
+                {this.state.showCorrect && <Correct />}
+                 {renderButtons()}
+            
+            </div>
+           
             
         )
     }
@@ -61,10 +71,11 @@ class DogNameContainer extends React.Component {
         }
        
         if (correctName === dog){
+            this.hidingFunc('yes')
             this.props.addCorrect(dog)
             setTimeout(reRenderComponent, 2000)
         } else {  
-             alert("Wrong")
+            this.hidingFunc('no')
             this.props.addIncorrect(dog)
             setTimeout(reRenderComponent, 2000)
         }
