@@ -1,5 +1,6 @@
-import * as React from 'react'
+import * as React from 'react';
 import './DogNameComponent.css' ;
+import Button from '@material-ui/core/Button';
 
 export default function DogNameComponent(props) {
 
@@ -18,6 +19,5 @@ export default function DogNameComponent(props) {
             : <button onClick={submitAnswer} >{props.name}</button>
             }
         </div>
-            
         )
 }

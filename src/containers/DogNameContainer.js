@@ -61,14 +61,10 @@ class DogNameContainer extends React.Component {
         }
        
         if (correctName === dog){
-            // alert("Correct!")
-            //
-            console.log(this)
-            this.style={color:'green'}
             this.props.addCorrect(dog)
             setTimeout(reRenderComponent, 2000)
         } else {  
-            // alert("Wrong")
+             alert("Wrong")
             this.props.addIncorrect(dog)
             setTimeout(reRenderComponent, 2000)
         }
