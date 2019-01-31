@@ -3,11 +3,21 @@ import './DogNameComponent.css' ;
 import Button from '@material-ui/core/Button';
 
 export default function DogNameComponent(props) {
-    
+
+    if (props.correct) {
+        console.log('h')
+    }
     const { submitAnswer } = props
-        
+    let correctButton = {
+        backgroundColor: 'green'
+    }
+
     return (
-        <Button onClick={submitAnswer} variant="contained" color="primary" > {props.name}</Button>
-         
+        <div className='button'>
+            { props.correct === true 
+            ? <button onClick={submitAnswer} style={correctButton}>{props.name}</button>
+            : <button onClick={submitAnswer} >{props.name}</button>
+            }
+        </div>
         )
 }
