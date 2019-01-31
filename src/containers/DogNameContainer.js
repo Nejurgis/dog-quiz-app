@@ -5,24 +5,25 @@ import { addIncorrect } from '../actions/addIncorrect'
 import { addCorrect } from '../actions/addCorrect'
 import request from 'superagent'
 import {setImage} from '../actions/setImage'
-import Correct from '../components/Correct'
-import Incorrect from '../components/Incorrect'
+import AnswerStatus from '../components/AnswerStatus'
 
 class DogNameContainer extends React.Component {
     
     state = {
-        showCorrect: false,
-        showIncorrect: false,
+        showAnswer: ''
     }
 
 
-    hidingFunc = (value) => {
-        if (value === 'yes') {
-            this.setState({showCorrect: !this.state.showCorrect})
+    displayAnswer = (answer) => {
+        if (answer === 'Right') {
+            this.setState({showAnswer: 'Correct!'})
         } else {
-            this.setState({showIncorrect: !this.state.showIncorrect})
+            this.setState({showAnswer: 'Incorrect!'})
         }
+        // setTimeout(this.hideMessage(), 2000)
+
     }
+  
 
     render() {
 
@@ -48,12 +49,12 @@ class DogNameContainer extends React.Component {
             dogArray.push(randomDog(), randomDog(), randomDog())
 
         }
+        
 
         return (
             <div>
 
-                {this.state.showIncorrect && <Incorrect />}
-                {this.state.showCorrect && <Correct />}
+                {this.state.showAnswer && <AnswerStatus props={this.state.showAnswer}/>}
                  {renderButtons()}
             
             </div>
@@ -65,16 +66,22 @@ class DogNameContainer extends React.Component {
             request('https://dog.ceo/api/breeds/image/random')
                 .then(response => this.props.setImage(response.body.message))
         }
+
+        const hideMessage = () => {
+            this.setState({showAnswer: ''})
+        }
        
         if (correctName === dog){
-            this.hidingFunc('yes')
+            this.displayAnswer('Right')
             this.props.addCorrect(dog)
             setTimeout(reRenderComponent, 2000)
+            setTimeout(hideMessage, 2000)
         } else {  
-            this.hidingFunc('no')
-
+            this.displayAnswer('Wrong')
             this.props.addIncorrect(dog)
             setTimeout(reRenderComponent, 2000)
+            setTimeout(hideMessage, 2000)
+
         }
     }
 

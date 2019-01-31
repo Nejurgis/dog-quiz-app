@@ -204,7 +204,6 @@ class App extends Component {
             <ImageApp data ={data}></ImageApp>
             {/* <ButtonApp data = {data}></ButtonApp> */}
 
- 
           </main>
         </div>
       </Provider>
