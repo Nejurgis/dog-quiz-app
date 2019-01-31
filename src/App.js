@@ -213,7 +213,7 @@ class App extends Component {
           <button onClick={() => this.switchGame()}>3 Images 1 Name</button>
           <button onClick={() => this.switchGame()}>1 Image 3 Names</button>
             
-            {!this.state.isHidden 
+            {this.state.isHidden 
               ? <ButtonApp data={data} /> 
               :<ImageApp data ={data}></ImageApp>
             }
