@@ -3,7 +3,7 @@ import GetHintText from '../components/GetHintText'
 
 export default class GetHint extends Component {
     render() {
-        return (<GetHintText></GetHintText>
+        return (<GetHintText />
         )
     }
 }

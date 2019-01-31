@@ -1,7 +1,7 @@
 const initialState = {
-        correct: [],
-        inCorrect: []
-    }
+    correct: [],
+    inCorrect: []
+}
 
 
 const answerReducer = (state = initialState, action = {}) => {
@@ -9,10 +9,10 @@ const answerReducer = (state = initialState, action = {}) => {
     switch (action.type) {
         case 'ADD_CORRECT_ANSWER':
             return {
-                ...state, 
+                ...state,
                 correct: [...state.correct, action.payload]
             }
-                
+
 
         case 'ADD_INCORRECT_ANSWER':
             return {
