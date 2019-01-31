@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import './Status.css';
+import '../styles/Status.css';
 
 class Stats extends React.Component {
 
@@ -17,7 +17,6 @@ class Stats extends React.Component {
             </div>
         )
     }
-
 }
 const mapStateToProps = (state) => {
 

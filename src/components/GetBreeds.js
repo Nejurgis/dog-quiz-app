@@ -8,8 +8,6 @@ class GetBreeds extends React.Component {
   componentDidMount() {
     request('https://dog.ceo/api/breeds/image/random')
       .then(response => this.props.setImage(response.body.message))
-
-    request('')
   }
 
   render() {
