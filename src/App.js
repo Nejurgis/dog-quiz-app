@@ -200,11 +200,11 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <main className="App-header">
+          <main className="App-main">
             <Stats></Stats>
             <h1>Who's this Pokémon?</h1>
             <ImageComponent></ImageComponent>
-            <div className="name-container">
+            <div className="buttons-container">
               <DogNameContainer value={data}></DogNameContainer>
             </div>
             <GetBreeds></GetBreeds>

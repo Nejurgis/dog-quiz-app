@@ -1,7 +1,8 @@
-.name-container {
-    display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    margin-top: 3vh; 
-}
+.buttons-container button{
+    margin: 1em;
+    font-weight: bold;
+  }
+
+  .buttons-container button:hover{
+    background-color: blueviolet
+  }

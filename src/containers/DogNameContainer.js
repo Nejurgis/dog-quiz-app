@@ -39,10 +39,7 @@ class DogNameContainer extends React.Component {
                     <DogNameComponent key={index} submitAnswer={() => this.submitAnswer(correctName, dog)} name={dog} correct={dog === correctName} />)}
                 </div>
             )
-        }
-
-        console.log(this.props)
-        
+        }        
         const dogArray = [randomDog(), randomDog(), correctName].sort()
         
         if (this.props.correctAnswersNum >= 10 ) {
@@ -64,14 +61,10 @@ class DogNameContainer extends React.Component {
         }
        
         if (correctName === dog){
-            // alert("Correct!")
-            //
-            console.log(this)
-            this.style={color:'green'}
             this.props.addCorrect(dog)
             setTimeout(reRenderComponent, 2000)
         } else {  
-            // alert("Wrong")
+             alert("Wrong")
             this.props.addIncorrect(dog)
             setTimeout(reRenderComponent, 2000)
         }

@@ -1,11 +1,9 @@
-import * as React from 'react'
+import * as React from 'react';
 import './DogNameComponent.css' ;
+import Button from '@material-ui/core/Button';
 
 export default function DogNameComponent(props) {
 
-    if (props.correct) {
-        console.log('h')
-    }
     const { submitAnswer } = props
     let correctButton = {
         backgroundColor: 'green'
@@ -14,10 +12,9 @@ export default function DogNameComponent(props) {
     return (
         <div className='button'>
             { props.correct === true 
-            ? <button onClick={submitAnswer} style={correctButton}>{props.name}</button>
-            : <button onClick={submitAnswer} >{props.name}</button>
+            ? <Button onClick={submitAnswer} variant='contained' color='primary' style={correctButton}>{props.name}</Button>
+            : <Button onClick={submitAnswer} variant='contained' color='primary' >{props.name}</Button>
             }
         </div>
-            
         )
 }
