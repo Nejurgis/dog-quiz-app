@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-
-import './App.css';
-import DogNameContainer from './containers/DogNameContainer'
-import ImageComponent from './components/ImageComponent'
+import './styles/App.css'
 import { Provider } from 'react-redux'
 import store from './store'
-import GetBreeds from './components/GetBreeds'
-import Stats from './components/Stats'
+import ImageApp from './containers/ImageApp'
+import ButtonApp from './containers/ButtonApp'
+
 
 const data = {
   "affenpinscher": [],
@@ -203,18 +201,10 @@ class App extends Component {
         <div className="App">
           <main className="App-main">
 
-            <Stats></Stats>
+            <ImageApp data ={data}></ImageApp>
+            {/* <ButtonApp data = {data}></ButtonApp> */}
 
-
-            <h1>Who's this Pokémon?</h1>
-            <ImageComponent />
-            <div className="buttons-container">
-              <DogNameContainer value={data}></DogNameContainer>
-            </div>
-            <GetBreeds />
           </main>
-         
-
         </div>
       </Provider>
       

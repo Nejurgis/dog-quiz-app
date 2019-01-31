@@ -6,3 +6,8 @@
   .buttons-container button:hover{
     background-color: blueviolet
   }
+
+ .test{
+   margin: 1em;
+   display: inline-block
+ }
