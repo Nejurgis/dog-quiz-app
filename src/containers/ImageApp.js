@@ -8,7 +8,7 @@ export default class ImageApp extends React.Component {
     render() {
         return(
             <div>
-                <h1>Who's this Pokémon?</h1>
+                <h1 className='title'>Who's this Pokémon?</h1>
                 <Stats></Stats>
                 <ImageComponent />
                 <div className="buttons-container">

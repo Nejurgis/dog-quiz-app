@@ -1,13 +1,25 @@
 .buttons-container button{
     margin: 1em;
     font-weight: bold;
+    
   }
 
   .buttons-container button:hover{
     background-color: blueviolet
   }
 
- .test{
-   margin: 1em;
-   display: inline-block
+ .lineButtons{
+   display: inline-block;
+   /* border: solid 1px red; */
+   margin-bottom: 50px;
+ }
+
+
+ .feedback{
+   /* border: solid 1px red; */
+   bottom: 0px;
+   align-self: auto;
+   margin: 0;
+   padding: 0;
+	 position: relative
  }
