@@ -1,10 +1,8 @@
 import React from 'react'
 import DogNameContainer from './DogNameContainer'
 import ImageComponent from '../components/ImageComponent'
-import store from '../store'
 import GetBreeds from '../components/GetBreeds'
 import Stats from '../components/Stats'
-import GetHint from './GetHint'
 
 export default class ButtonApp extends React.Component {
     render() {
@@ -18,7 +16,6 @@ export default class ButtonApp extends React.Component {
                 </div>
                 <ImageComponent />
                 <GetBreeds />
-                <GetHint />
             </div>
         )
     }
