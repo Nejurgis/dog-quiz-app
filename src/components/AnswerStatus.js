@@ -2,8 +2,9 @@ import * as React from 'react'
 
 export default class Correct extends React.Component {
     render() {
+        const text = this.props
         return (
-            <div>CORRECT</div>
+            <h2>{text.props}</h2>
         )
     }
 }

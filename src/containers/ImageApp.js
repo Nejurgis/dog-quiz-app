@@ -3,7 +3,6 @@ import DogNameContainer from './DogNameContainer'
 import ImageComponent from '../components/ImageComponent'
 import GetBreeds from '../components/GetBreeds'
 import Stats from '../components/Stats'
-import GetHint from './GetHint'
 
 export default class ImageApp extends React.Component {
     render() {
@@ -16,7 +15,6 @@ export default class ImageApp extends React.Component {
                     <DogNameContainer value={this.props.data}></DogNameContainer>
                 </div>
                 <GetBreeds />
-                <GetHint />
             </div>
         )
     }

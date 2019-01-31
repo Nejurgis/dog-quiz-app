@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css'
 import { Provider } from 'react-redux'
 import store from './store'
 import ImageApp from './containers/ImageApp'
-import ButtonApp from './containers/ButtonApp'
 
 
 const data = {
@@ -208,7 +207,6 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <main className="App-main">
-  
 
           <button onClick={() => this.switchGame()}>3 Images 1 Name</button>
           <button onClick={() => this.switchGame()}>1 Image 3 Names</button>
@@ -217,7 +215,6 @@ class App extends Component {
               ? <ButtonApp data={data} /> 
               :<ImageApp data ={data}></ImageApp>
             }
-            {/* <ButtonApp data = {data}></ButtonApp> */}
           </main>
         </div>
       </Provider>
