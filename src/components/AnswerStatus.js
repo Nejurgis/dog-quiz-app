@@ -4,7 +4,7 @@ export default class Correct extends React.Component {
     render() {
         const text = this.props
         return (
-            <h2>{text.props}</h2>
+            <h2 className='feedback'>{text.props}</h2>
         )
     }
 }
