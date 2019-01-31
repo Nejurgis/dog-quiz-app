@@ -7,8 +7,6 @@ import { Provider } from 'react-redux'
 import store from './store'
 import GetBreeds from './components/GetBreeds'
 import Stats from './components/Stats'
-import GetHint from './containers/GetHint'
-import { Transition, animated, config } from 'react-spring'
 
 const data = {
   "affenpinscher": [],
@@ -214,7 +212,6 @@ class App extends Component {
               <DogNameContainer value={data}></DogNameContainer>
             </div>
             <GetBreeds />
-            <GetHint />
           </main>
          
 
