@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './ImageComponent.css';
+import '../styles/ImageComponent.css';
 import { connect } from 'react-redux'
 
 function ImageComponent(props) {

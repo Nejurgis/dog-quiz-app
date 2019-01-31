@@ -1,0 +1,12 @@
+.status h3{
+    line-height: 20%;
+    font-size: 1em;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 0.5em;
+    /* border: solid 1px red; */
+    margin-top: 0;
+    margin-bottom: 0.7em;
+  }
