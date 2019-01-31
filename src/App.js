@@ -191,18 +191,30 @@ const data = {
 }
 
 class App extends Component {
-  state = { items:[]}
+  state = {
+    isHidden: true
+  }
 
- 
+
+  switchGame = () => {
+    this.setState({
+      isHidden: !this.state.isHidden
+    })
+  }
+
   render() {
     return (
       <Provider store={store}>
         <div className="App">
           <main className="App-main">
 
-            <ImageApp data ={data}></ImageApp>
-            {/* <ButtonApp data = {data}></ButtonApp> */}
-
+          <button onClick={() => this.switchGame()}>3 Images 1 Name</button>
+          <button onClick={() => this.switchGame()}>1 Image 3 Names</button>
+            
+            {this.state.isHidden 
+              ? <ButtonApp data={data} /> 
+              :<ImageApp data ={data}></ImageApp>
+            }
           </main>
         </div>
       </Provider>
