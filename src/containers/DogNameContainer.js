@@ -45,11 +45,11 @@ class DogNameContainer extends React.Component {
             .then(response => this.props.setImage(response.body.message))
         }
         if (correctName === dog){
-            // alert("Correct!")
+            alert("Correct!")
             this.props.addCorrect(dog)
             setTimeout(reRenderComponent, 2000)
         } else {  
-            // alert("Wrong")
+             alert("Wrong")
             this.props.addIncorrect(dog)
             setTimeout(reRenderComponent, 2000)
         }
