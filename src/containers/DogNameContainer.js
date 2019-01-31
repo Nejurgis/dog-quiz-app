@@ -18,7 +18,7 @@ class DogNameContainer extends React.Component {
             this.setState({showAnswer: 'Correct!'})
         }else {
             this.setState({showAnswer: `Incorrect!! Correct is  ${correctName}`})
-        }
+        }}
   
 
     render() {
@@ -54,6 +54,7 @@ class DogNameContainer extends React.Component {
                 </div>)
                 
         }
+
 
     submitAnswer(correctName, dog) {
         const reRenderComponent = () => {
