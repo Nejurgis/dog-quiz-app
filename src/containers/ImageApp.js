@@ -10,7 +10,7 @@ export default class ImageApp extends React.Component {
         return(
             <div>
                 <h1 className='title'>Who's this Pokémon?</h1>
-                <Stats></Stats>
+                <Stats className='stats'></Stats>
                 <ImageComponent />
                 <div className="buttons-container">
                     <DogNameContainer value={this.props.data}></DogNameContainer>
