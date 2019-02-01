@@ -7,7 +7,7 @@ class Stats extends React.Component {
     render() {
         const total = this.props.correct + this.props.inCorrect
         let score = Math.round((this.props.correct * 100) / total)
-        if (isNaN(score)) { score = `Starting text here` }
+        if (isNaN(score)) { score = `To be determined` }
         else score = score + '%'
         return (
             <div className='status'>
