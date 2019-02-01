@@ -1,4 +1,5 @@
 import * as React from 'react'
+import '../styles/Feedback.css'
 
 export default class Correct extends React.Component {
     render() {
