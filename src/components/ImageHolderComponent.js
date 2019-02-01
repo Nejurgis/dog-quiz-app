@@ -1,6 +1,5 @@
 import * as React from 'react';
 import '../styles/DogNameComponent.css';
-import Button from '@material-ui/core/Button';
 
 export default function DogNameComponent(props) {
     const { submitAnswer } = props

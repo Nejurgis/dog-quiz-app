@@ -5,9 +5,7 @@ import { connect } from 'react-redux'
 function ReversedComponent(props) {
     const image = props.breeds
     return (
-        <div>
-         
-
+        <div>     
             {image.map(url => <div key={url}>
             {String(url.breeds).split('/')[4]}</div> )}
         </div>
