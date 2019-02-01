@@ -209,13 +209,13 @@ class App extends Component {
         <div className="App">
           <main className="App-main">
 
-          <button onClick={() => this.switchGame()}>3 Images 1 Name</button>
-          <button onClick={() => this.switchGame()}>1 Image 3 Names</button>
-            
-            {this.state.isHidden 
+          {/* <button onClick={() => this.switchGame()}>3 Images 1 Name</button>
+          <button onClick={() => this.switchGame()}>1 Image 3 Names</button> */}
+            <ImageApp data = {data}></ImageApp>
+            {/* {this.state.isHidden 
               ? <ButtonApp data={data} /> 
               :<ImageApp data ={data}></ImageApp>
-            }
+            } */}
           </main>
         </div>
       </Provider>
