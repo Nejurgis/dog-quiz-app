@@ -18,8 +18,7 @@ class DogNameContainer extends React.Component {
             this.setState({showAnswer: 'Correct!'})
         }else {
             this.setState({showAnswer: `Incorrect!! Correct is  ${correctName}`})
-        }
-      }
+        }}
   
 
     render() {
@@ -29,6 +28,7 @@ class DogNameContainer extends React.Component {
         let randomNum = Math.floor(Math.random() * Object.keys(this.props.value).length)
         return Object.keys(this.props.value)[randomNum]
         }
+
         const renderButtons = () => {
             return(
             <div>
@@ -42,8 +42,8 @@ class DogNameContainer extends React.Component {
         
         const dogArray = [randomDog(), randomDog(), correctName].sort()
 
-        if (this.props.correctAnswersNum >= 10) {
-            alert('you guessed correctly 10 times!')
+        if (this.props.correctAnswersNum === 10 && this.props.incorrectAnswersNum === 0) {
+            alert(`You're on fire!`)
             dogArray.push(randomDog(), randomDog(), randomDog())
         }
         
@@ -54,6 +54,7 @@ class DogNameContainer extends React.Component {
                 </div>)
                 
         }
+
 
     submitAnswer(correctName, dog) {
         const reRenderComponent = () => {
@@ -85,7 +86,8 @@ class DogNameContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         imageUrl: state.breeds,
-        correctAnswersNum: state.answerReducer.correct.length
+        correctAnswersNum: state.answerReducer.correct.length,
+        incorrectAnswersNum: state.answerReducer.inCorrect.length
     }
 }
 
