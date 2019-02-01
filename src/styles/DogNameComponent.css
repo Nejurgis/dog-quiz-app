@@ -1,11 +1,12 @@
 .buttons-container button{
     margin: 1em;
     font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
     
   }
 
   .buttons-container button:hover{
-    background-color: blueviolet
+    background-color: rgb(61, 40, 155);
   }
 
  .lineButtons{
@@ -14,12 +15,22 @@
    margin-bottom: 50px;
  }
 
+ @media (max-width: 600px) {
+   .lineButtons {
+     width: 32%;
+   }
+ }
 
  .feedback{
    /* border: solid 1px red; */
+   background-color: blue;
+
+   font-family: 'Roboto Mono', monospace;
+   font-size: 0.85em;
    bottom: 0px;
    align-self: auto;
    margin: 0;
-   padding: 0;
+   margin-top: 0.4em;
+   padding: 0.5em;
 	 position: relative
  }
