@@ -1,7 +1,6 @@
 import React from 'react'
 import DogNameContainer from './DogNameContainer'
 import ImageComponent from '../components/ImageComponent'
-import GetBreeds from '../components/GetBreeds'
 import Stats from '../components/Stats'
 import '../styles/ImageApp.css'
 
@@ -15,7 +14,6 @@ export default class ImageApp extends React.Component {
                 <div className="buttons-container">
                     <DogNameContainer value={this.props.data}></DogNameContainer>
                 </div>
-                <GetBreeds />
             </div>
         )
     }
