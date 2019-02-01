@@ -5,11 +5,10 @@ import Stats from '../components/Stats'
 
 export default class ButtonApp extends React.Component {
     render() {
-        return(
+        return (
             <div>
                 <h1>Who's this Pokémon?</h1>
-                <Stats></Stats>
-                
+                <Stats />
                 <div className="buttons-container">
                     <DogNameContainer value={this.props.data}></DogNameContainer>
                 </div>
