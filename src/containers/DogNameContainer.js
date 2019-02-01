@@ -3,9 +3,9 @@ import DogNameComponent from '../components/DogNameComponent'
 import { connect } from 'react-redux'
 import { addIncorrect } from '../actions/addIncorrect'
 import { addCorrect } from '../actions/addCorrect'
-import request from 'superagent'
 import {setImage} from '../actions/setImage'
 import AnswerStatus from '../components/AnswerStatus'
+import {fetchUrlImage} from '../actions/fetch-url-image'
 
 class DogNameContainer extends React.Component {
     
@@ -57,28 +57,19 @@ class DogNameContainer extends React.Component {
 
 
     submitAnswer(correctName, dog) {
-        const reRenderComponent = () => {
-            request('https://dog.ceo/api/breeds/image/random')
-                .then(response => this.props.setImage(response.body.message))
-        }
-
         const hideMessage = () => {
             this.setState({showAnswer: ''})
+           this.props.fetchUrlImage()
         }
        
         if (correctName === dog){
             this.displayAnswer('Right', correctName)
             this.props.addCorrect(dog)
-            setTimeout(reRenderComponent, 2000)
             setTimeout(hideMessage, 2000)
-            
-            
         } else {  
             this.displayAnswer('Wrong', correctName)
             this.props.addIncorrect(dog)
-            setTimeout(reRenderComponent, 2000)
             setTimeout(hideMessage, 2000)
-
         }
     }
 
@@ -92,4 +83,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { addCorrect, addIncorrect, setImage })(DogNameContainer)
+export default connect(mapStateToProps, { addCorrect, addIncorrect, setImage, fetchUrlImage })(DogNameContainer)

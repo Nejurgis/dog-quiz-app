@@ -1,19 +1,29 @@
 import * as React from 'react'
 import '../styles/ImageComponent.css';
 import { connect } from 'react-redux'
-
-function ImageComponent(props) {
-    const image = props.breeds
-    return (
-        <div>
-            {image.map(url =>
-                <img key={url} src={url.breeds} alt="" />)}
+import { fetchUrlImage } from '../actions/fetch-url-image'
 
 
-            {/* {image.map(url => <div key={url}>
-            {String(url.breeds).split('/')[4]}</div> )} */}
-        </div>
-    )
+class ImageComponent extends React.Component {
+    componentDidMount() {
+        this.props.fetchUrlImage()
+    }
+
+    render() {
+        const image = this.props.breeds
+        return (
+            <div>
+                {image.map(url =>
+                    <img key={url} src={url.breeds} alt="" />)}
+    
+    
+                {/* {image.map(url => <div key={url}>
+                {String(url.breeds).split('/')[4]}</div> )} */}
+            </div>
+        )
+
+    }
+
 }
 
 
@@ -25,4 +35,4 @@ const mapStateToProps = (state) => {
         breeds: state.breeds
     }
 }
-export default connect(mapStateToProps)(ImageComponent)
+export default connect(mapStateToProps, { fetchUrlImage })(ImageComponent)
